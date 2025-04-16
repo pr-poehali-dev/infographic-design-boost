@@ -53,21 +53,25 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Добавим новые цвета для портфолио инфографика
+        // Обновленные нежно-розовые цвета
         pink: {
-          light: "#FFD6E8",
-          DEFAULT: "#FF82B2",
-          dark: "#FF4D94",
+          lightest: "#FFF0F5", // Самый светлый нежный розовый для фонов
+          lighter: "#FFE4EE", // Светлый нежный розовый
+          light: "#FFD6E5",   // Нежный розовый для акцентов
+          DEFAULT: "#FFAED1", // Основной нежно-розовый
+          medium: "#FF8DC0",  // Средний розовый
+          dark: "#FF6AAF",    // Темный розовый для кнопок и важных элементов
         },
-        teal: {
-          light: "#E6FFFA",
-          DEFAULT: "#4FD1C5",
-          dark: "#2C7A7B",
+        // Дополнительные цвета для акцентов
+        lavender: {
+          light: "#EEE6FF",
+          DEFAULT: "#D8C6FF", 
+          dark: "#BCA7FF",
         },
-        violet: {
-          light: "#E9D8FD",
-          DEFAULT: "#9F7AEA",
-          dark: "#6B46C1",
+        mint: {
+          light: "#E8F8F5",
+          DEFAULT: "#CFECE7",
+          dark: "#A8DFD4",
         },
       },
       borderRadius: {
@@ -87,10 +91,19 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 5s ease-in-out infinite",
+      },
+      boxShadow: {
+        'soft': '0 4px 20px rgba(255, 174, 209, 0.15)',
+        'softer': '0 2px 10px rgba(255, 174, 209, 0.1)',
       },
     },
   },

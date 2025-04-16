@@ -7,12 +7,12 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-softer">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-bold text-pink-dark flex items-center">
-            <span className="mr-2">📊</span> 
-            <span>Айша</span>
+            <span className="mr-2">🎨</span> 
+            <span className="gradient-text">Милана</span>
           </Link>
         </div>
 
@@ -23,6 +23,7 @@ const Header = () => {
             size="icon" 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Меню"
+            className="text-pink-medium hover:text-pink-dark hover:bg-pink-lightest"
           >
             <Menu className="h-6 w-6" />
           </Button>
@@ -36,7 +37,7 @@ const Header = () => {
 
       {/* Мобильное меню (выпадающее) */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 py-4">
+        <div className="lg:hidden bg-white border-t border-pink-lighter py-4 animate-accordion-down">
           <div className="container mx-auto px-4 flex flex-col gap-4">
             <NavLinks mobile onClick={() => setIsMenuOpen(false)} />
           </div>
@@ -68,7 +69,7 @@ const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
           to={item.path} 
           className={`
             ${mobile ? "block py-2" : ""}
-            font-medium hover:text-pink-dark transition-colors
+            font-medium text-gray-700 hover:text-pink-dark transition-colors
           `}
           onClick={onClick}
         >
@@ -77,7 +78,7 @@ const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
       ))}
       <Button 
         variant="default" 
-        className="bg-pink-DEFAULT hover:bg-pink-dark text-white"
+        className="bg-pink-DEFAULT hover:bg-pink-dark text-foreground rounded-full px-6"
         onClick={onClick}
       >
         Связаться
